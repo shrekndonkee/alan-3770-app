@@ -5,6 +5,8 @@
 @import '@skeletonlabs/skeleton/optional/presets';
 @import '@skeletonlabs/skeleton/themes/cerberus';
 @import '@skeletonlabs/skeleton/themes/mint';
+@import '@skeletonlabs/skeleton/themes/wintry';
+
 
 
 @source '../node_modules/@skeletonlabs/skeleton-svelte/dist';
