@@ -71,7 +71,7 @@
           <div class="relative bg-white/5 backdrop-blur-sm rounded-3xl p-6 border border-green-600/20 shadow-2xl">
             <img 
               {src} 
-              alt="Pikachu with Thor's Hammer - Your Development Journey Mascot" 
+              alt="Dog - Your Development Journey Mascot" 
               class="w-full h-auto max-w-md mx-auto rounded-2xl shadow-lg transform group-hover:scale-105 transition-transform duration-500"
               class:animate-pulse={!mounted}
             />

@@ -37,7 +37,24 @@
 			icon: "🧠",
 			href: "/tutorials/logic",
 			color: "from-green-600 to-emerald-600"
+		},
+
+		{
+			title: "Events",
+			description: "Components send and respond to actions",
+			icon: "🔔",
+			href: "/tutorials/events",
+			color: "from-green-600 to-emerald-600"
+		},
+
+		{
+			title: "Bindings",
+			description: "Connect values between your code",
+			icon: "🔗",
+			href: "/tutorials/bindings",
+			color: "from-green-600 to-emerald-600"
 		}
+
 	];
 </script>
 
