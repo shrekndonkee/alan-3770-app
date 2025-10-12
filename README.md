@@ -20,6 +20,10 @@ Topic	Description	Link
 🎯 Events	Handle user actions and custom event dispatching.	https://alan-3770-app.vercel.app/tutorials/events
 
 🔗 Bindings	Create two-way connections between data and the UI.	https://alan-3770-app.vercel.app/tutorials/bindings
+
+🎨 Classes & Styles Dynamically apply visual changes to elements using reactive state and bindings.
+https://alan-3770-app.vercel.app/tutorials/classes-styles
+
 🛠️ Built With
 
 Svelte
@@ -58,3 +62,4 @@ This project is open-source and available under the MIT License
 
 This project is open-source and available under the MIT License
 .
+
