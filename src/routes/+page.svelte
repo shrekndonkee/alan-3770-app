@@ -53,6 +53,14 @@
 			icon: "🔗",
 			href: "/tutorials/bindings",
 			color: "from-green-600 to-emerald-600"
+		},
+
+		{
+			title: "Classes & Styles",
+			description: "Change an element’s appearance by binding CSS classes or inline styles to reactive state variables.",
+			icon: "🎨",
+			href: "/tutorials/classes-styles",
+			color: "from-green-600 to-emerald-600"
 		}
 
 	];
