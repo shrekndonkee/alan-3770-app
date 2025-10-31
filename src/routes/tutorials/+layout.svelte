@@ -12,6 +12,7 @@
     <li><a href="/tutorials/events" class="hover:text-white hover:underline decoration-emerald-400 underline-offset-4">Events</a></li>
     <li><a href="/tutorials/bindings" class="hover:text-white hover:underline decoration-emerald-400 underline-offset-4">Bindings</a></li>
         <li><a href="/tutorials/classes-styles" class="hover:text-white hover:underline decoration-emerald-400 underline-offset-4">Classes & Styles</a></li>
+        <li><a href="/tutorials/motion" class="hover:text-white hover:underline decoration-emerald-400 underline-offset-4">Motion</a></li>
   </ul>
 </nav>
 

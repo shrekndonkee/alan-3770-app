@@ -20,6 +20,13 @@ Topic	Description	Link
 🎯 Events	Handle user actions and custom event dispatching.	https://alan-3770-app.vercel.app/tutorials/events
 
 🔗 Bindings	Create two-way connections between data and the UI.	https://alan-3770-app.vercel.app/tutorials/bindings
+
+
+🎞️ Motion
+Animate UI with transitions, springs, and tweened stores driven by real data.
+https://alan-3770-app.vercel.app/tutorials/motion
+
+
 🛠️ Built With
 
 Svelte

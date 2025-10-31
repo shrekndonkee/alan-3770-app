@@ -61,7 +61,14 @@
 			icon: "🎨",
 			href: "/tutorials/classes-styles",
 			color: "from-green-600 to-emerald-600"
-		}
+		},
+		{
+	title: "Motion",
+	description: "Animate elements using transitions, springs, and tweened stores to bring your UI to life.",
+	icon: "🎞️",
+	href: "/tutorials/motion",
+	color: "from-blue-600 to-indigo-600"
+}
 
 	];
 </script>
