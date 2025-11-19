@@ -99,23 +99,28 @@
                     {/if}
                 </div>
             {:else}
-                <!-- Simple Login/Register Links -->
-                <div class="flex items-center gap-4">
-                    <a
-                        href="/api/auth/login"
-                        class="flex items-center gap-1 rounded-lg border border-green-500/50 bg-black px-3 py-1.5 text-sm font-medium text-green-400 transition-all hover:border-green-400 hover:shadow-lg hover:shadow-green-500/30"
-                    >
-                        <span>🔐</span>
-                        <span>Login</span>
-                    </a>
-                    <a
-                        href="/api/auth/register"
-                        class="flex items-center gap-1 rounded-lg border border-green-400/50 bg-black px-3 py-1.5 text-sm font-medium text-green-300 transition-all hover:border-green-300 hover:shadow-lg hover:shadow-green-400/30"
-                    >
-                        <span>📝</span>
-                        <span>Register</span>
-                    </a>
-                </div>
+              <!-- Simple Login/Register Links -->
+<div class="flex items-center gap-4">
+
+    <!-- LOGIN BUTTON (text only) -->
+    <a
+        href="/api/auth/login"
+        class="text-green-400 font-semibold transition-all duration-200 hover:text-green-300 active:scale-95"
+    >
+        Login
+    </a>
+
+    <!-- REGISTER BUTTON (text only) -->
+    <a
+        href="/api/auth/register"
+        class="text-green-400 font-semibold transition-all duration-200 hover:text-green-300 active:scale-95"
+    >
+        Sign Up
+    </a>
+
+</div>
+
+
             {/if}
         </div>
     </div>

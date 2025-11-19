@@ -217,7 +217,7 @@
 			</div>
 			<div
 				class="relative rounded-2xl border-2 border-green-700 bg-black/90 p-12 backdrop-blur-sm">
-				<div class="mb-6 text-7xl opacity-50">🔒</div>
+				<div class="mb-6 text-7xl opacity-50 animate-bounce">🔒</div>
 				<h2 class="mb-4 text-4xl font-bold text-white">
 					Authentication Required
 				</h2>
@@ -226,50 +226,29 @@
 					and hands-on coding experiences.
 				</p>
 
-				<!-- Action Buttons -->
-				<div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
-					<a href="/api/auth/login" class="group relative inline-block">
-						<div
-							class="absolute -inset-1 rounded-xl bg-gradient-to-r from-green-500 to-green-300 opacity-60 blur transition duration-300 group-hover:opacity-100">
-						</div>
-						<div
-							class="relative flex items-center justify-center gap-2 rounded-xl border-2 border-green-500/50 bg-black px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-400">
-							<span class="text-xl">🔐</span>
-							<span>Login to Continue</span>
-						</div>
-					</a>
+			<!-- Action Buttons -->
+<div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
 
-					<a href="/api/auth/register" class="group relative inline-block">
-						<div
-							class="absolute -inset-1 rounded-xl bg-gradient-to-r from-green-400 to-green-200 opacity-60 blur transition duration-300 group-hover:opacity-100">
-						</div>
-						<div
-							class="relative flex items-center justify-center gap-2 rounded-xl border-2 border-green-400/50 bg-black px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-300">
-							<span class="text-xl">📝</span>
-							<span>Create Account</span>
-						</div>
-					</a>
-				</div>
+	<!-- LOGIN BUTTON -->
+	<a href="/api/auth/login"
+		class="flex items-center justify-center gap-2 rounded-2xl bg-green-800 px-8 py-4 font-semibold text-white shadow-md transition-all duration-200 hover:bg-green-700 active:scale-95">
+		
+		
+		<span>Login to Continue</span>
+	</a>
 
-				<!-- Features List -->
-				<div class="mt-8 grid gap-4 text-left sm:grid-cols-2">
-					<div class="flex items-start gap-3 text-sm text-green-300/70">
-						<span class="text-lg">⚡</span>
-						<span>Interactive code examples</span>
-					</div>
-					<div class="flex items-start gap-3 text-sm text-green-300/70">
-						<span class="text-lg">🎯</span>
-						<span>Real-world projects</span>
-					</div>
-					<div class="flex items-start gap-3 text-sm text-green-300/70">
-						<span class="text-lg">🚀</span>
-						<span>Progressive learning path</span>
-					</div>
-					<div class="flex items-start gap-3 text-sm text-green-300/70">
-						<span class="text-lg">💡</span>
-						<span>Expert-crafted content</span>
-					</div>
-				</div>
+	<!-- REGISTER BUTTON -->
+	<a href="/api/auth/register"
+		class="flex items-center justify-center gap-2 rounded-2xl bg-green-500 px-8 py-4 font-semibold text-white shadow-md transition-all duration-200 hover:bg-green-400 active:scale-95">
+		
+		
+		<span>Create Account</span>
+	</a>
+
+</div>
+
+
+			
 			</div>
 		</div>
 	</div>
