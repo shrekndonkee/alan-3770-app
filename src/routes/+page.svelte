@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { authState } from '$lib/global/globalState.svelte';
 	
 	let mounted = false;
 	let particles: Array<{id: number, x: number, y: number, speed: number}> = [];
@@ -131,48 +132,176 @@
 				</p>
 			</div>
 
-			<!-- Access Button -->
-			<div class="text-center mb-16">
-				<a href="/tutorials" class="group relative inline-block">
-					<div class="absolute -inset-2 bg-gradient-to-r from-green-600 via-gray-600 to-green-700 rounded-2xl blur-lg opacity-60 group-hover:opacity-100 transition-opacity duration-500"></div>
-					<div class="relative bg-black border-2 border-green-600/50 rounded-2xl p-8 hover:border-green-400 transition-all duration-300 backdrop-blur-sm">
-						<div class="text-6xl mb-4">🚀</div>
-						<div class="text-3xl font-bold text-white mb-2">ACCESS TUTORIALS</div>
-						<div class="text-green-400 font-mono">ENTER TRAINING PROTOCOL</div>
-						
-						<div class="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
-					</div>
-				</a>
+
+{#if authState.isAuthenticated}
+<div class="mb-16 text-center">
+	<a href="/tutorial" class="group relative inline-block">
+
+		<!-- Green glow background -->
+		<div
+			class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-green-500 via-green-400 to-green-300 opacity-60 blur-lg transition-opacity duration-500 group-hover:opacity-100">
+		</div>
+
+		<!-- Main container -->
+		<div
+			class="relative rounded-2xl border-2 border-green-600/50 bg-black/50 p-8 backdrop-blur-sm transition-all duration-300 hover:border-green-400">
+
+			<!-- Icon -->
+			<div class="mb-4 text-6xl">🚀</div>
+
+			<!-- Title -->
+			<div class="mb-2 text-3xl font-bold text-white">ACCESS TUTORIALS</div>
+
+			<!-- Subtitle in green -->
+			<div class="font-mono text-green-400">ENTER TRAINING PROTOCOL</div>
+
+			<!-- Scanning line effect (green version) -->
+			<div
+				class="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-green-400/20 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[100%]">
+			</div>
+		</div>
+	</a>
+</div>
+
+
+<!-- Tutorial Module Preview Cards - Authenticated Users Only -->
+<div class="grid gap-8 md:grid-cols-3">
+	{#each tutorialSections as section}
+		<a href={section.href} class="group relative block">
+
+			<!-- Green Glow -->
+			<div
+				class="absolute -inset-1 rounded-xl bg-gradient-to-r from-green-500 via-green-400 to-green-300 opacity-25 blur transition duration-500 group-hover:opacity-75">
 			</div>
 
-			<!-- Tutorial Cards -->
-			<div class="grid md:grid-cols-3 gap-8">
-				{#each tutorialSections as section}
-					<a href={section.href} class="group relative block">
-						<div class="absolute -inset-1 bg-gradient-to-r {section.color} rounded-xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
-						<div class="relative bg-black/90 border border-gray-700 rounded-xl p-6 hover:border-green-600 transition-all duration-300 backdrop-blur-sm">
-							
-							<div class="flex items-center justify-between mb-4">
-								<div class="text-3xl">{section.icon}</div>
-								<div class="text-xs text-green-400 font-mono bg-green-400/10 px-2 py-1 rounded">
-									AVAILABLE
-								</div>
-							</div>
-							
-							<h3 class="text-xl font-bold text-white mb-2">{section.title}</h3>
-							<p class="text-gray-400 text-sm mb-4">{section.description}</p>
-							
-							<div class="w-full bg-gray-700 rounded-full h-2 mb-3">
-								<div class="bg-gradient-to-r {section.color} h-2 rounded-full w-0 group-hover:w-full transition-all duration-1000"></div>
-							</div>
-							
-							<div class="text-green-400 font-mono text-sm">
-								&gt; INITIALIZE MODULE_
-							</div>
+			<!-- Main Card -->
+			<div
+				class="relative rounded-xl border border-green-600/40 bg-black/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-green-400">
+
+				<!-- Module Status -->
+				<div class="mb-4 flex items-center justify-between">
+					<div class="text-3xl">{section.icon}</div>
+					<div class="rounded bg-green-400/10 px-2 py-1 font-mono text-xs text-green-400">
+						AVAILABLE
+					</div>
+				</div>
+
+				<!-- Module Info -->
+				<h3 class="mb-2 text-xl font-bold text-white">{section.title}</h3>
+				<p class="mb-4 text-sm text-green-200/70">{section.description}</p>
+
+				<!-- Progress Bar -->
+				<div class="mb-3 h-2 w-full rounded-full bg-green-950/40">
+					<div
+						class="h-2 w-0 rounded-full bg-gradient-to-r from-green-500 via-green-400 to-green-300 transition-all duration-1000 group-hover:w-full">
+					</div>
+				</div>
+
+				<!-- Footer Label -->
+				<div class="font-mono text-sm text-green-400">&gt; INITIALIZE MODULE_</div>
+			</div>
+		</a>
+	{/each}
+</div>
+
+			{:else}
+
+
+<!-- Call to Action for Non-Authenticated Users -->
+<div class="mb-16 text-center">
+	<div class="mx-auto max-w-3xl">
+		<!-- Locked Content Visual -->
+		<div class="relative mb-8">
+			<div
+				class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-green-500 via-green-400 to-green-300 opacity-40 blur-xl">
+			</div>
+			<div
+				class="relative rounded-2xl border-2 border-green-700 bg-black/90 p-12 backdrop-blur-sm">
+				<div class="mb-6 text-7xl opacity-50">🔒</div>
+				<h2 class="mb-4 text-4xl font-bold text-white">
+					Authentication Required
+				</h2>
+				<p class="mb-8 text-lg text-green-300/70">
+					Unlock access to 8 comprehensive Svelte training modules with interactive tutorials
+					and hands-on coding experiences.
+				</p>
+
+				<!-- Action Buttons -->
+				<div class="flex flex-col gap-4 sm:flex-row sm:justify-center">
+					<a href="/api/auth/login" class="group relative inline-block">
+						<div
+							class="absolute -inset-1 rounded-xl bg-gradient-to-r from-green-500 to-green-300 opacity-60 blur transition duration-300 group-hover:opacity-100">
+						</div>
+						<div
+							class="relative flex items-center justify-center gap-2 rounded-xl border-2 border-green-500/50 bg-black px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-400">
+							<span class="text-xl">🔐</span>
+							<span>Login to Continue</span>
 						</div>
 					</a>
-				{/each}
+
+					<a href="/api/auth/register" class="group relative inline-block">
+						<div
+							class="absolute -inset-1 rounded-xl bg-gradient-to-r from-green-400 to-green-200 opacity-60 blur transition duration-300 group-hover:opacity-100">
+						</div>
+						<div
+							class="relative flex items-center justify-center gap-2 rounded-xl border-2 border-green-400/50 bg-black px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-green-300">
+							<span class="text-xl">📝</span>
+							<span>Create Account</span>
+						</div>
+					</a>
+				</div>
+
+				<!-- Features List -->
+				<div class="mt-8 grid gap-4 text-left sm:grid-cols-2">
+					<div class="flex items-start gap-3 text-sm text-green-300/70">
+						<span class="text-lg">⚡</span>
+						<span>Interactive code examples</span>
+					</div>
+					<div class="flex items-start gap-3 text-sm text-green-300/70">
+						<span class="text-lg">🎯</span>
+						<span>Real-world projects</span>
+					</div>
+					<div class="flex items-start gap-3 text-sm text-green-300/70">
+						<span class="text-lg">🚀</span>
+						<span>Progressive learning path</span>
+					</div>
+					<div class="flex items-start gap-3 text-sm text-green-300/70">
+						<span class="text-lg">💡</span>
+						<span>Expert-crafted content</span>
+					</div>
+				</div>
 			</div>
+		</div>
+	</div>
+</div>
+{/if}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			
+			
 
 			<!-- Stats -->
 			<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">

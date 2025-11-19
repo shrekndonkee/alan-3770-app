@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Counter from '$lib/components/Counter.svelte';
-	import { counter } from '$lib/global/globalCount.svelte';
+	import { counter } from '$lib/global/globalState.svelte';
 	import { faker } from '@faker-js/faker';
 	import { Switch } from '@skeletonlabs/skeleton-svelte';
     import { getRandomNumber } from '$lib/utils/delayFunction';

@@ -1,5 +1,5 @@
 <script lang="ts">
-import {counter} from '$lib/global/globalCount.svelte';
+import {counter} from '$lib/global/globalState.svelte';
 </script>
 
 <button class="btn preset-filled-primary-950-50" onclick={
