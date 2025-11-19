@@ -135,7 +135,7 @@
 
 {#if authState.isAuthenticated}
 <div class="mb-16 text-center">
-	<a href="/tutorial" class="group relative inline-block">
+	<a href="/tutorials" class="group relative inline-block">
 
 		<!-- Green glow background -->
 		<div
