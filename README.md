@@ -4,6 +4,11 @@ A simple, educational website showcasing core Svelte concepts through clear exam
 
 🟢 Live Site: https://alan-3770-app.vercel.app/
 
+🔐 Authentication Required
+
+When you open the deployed site, you will be redirected to the login screen.
+You must sign in using the authentication options provided (Kinde login) before accessing the application.
+
 🧠 Overview
 
 This project serves as a hands-on learning hub for anyone getting started with Svelte.
@@ -58,4 +63,5 @@ This project is open-source and available under the MIT License
 
 This project is open-source and available under the MIT License
 .
+
 
