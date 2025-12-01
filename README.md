@@ -25,6 +25,10 @@ Topic	Description	Link
 🎯 Events	Handle user actions and custom event dispatching.	https://alan-3770-app.vercel.app/tutorials/events
 
 🔗 Bindings	Create two-way connections between data and the UI.	https://alan-3770-app.vercel.app/tutorials/bindings
+
+🎞️ Motion Bring components to life with transitions and motion effects. https://alan-3770-app.vercel.app/tutorials/motion
+
+🖼️ Dynamic Routes (Ghibli Films) Use dynamic routing to load API data for individual film detail pages. https://alan-3770-app.vercel.app/ghibli
 🛠️ Built With
 
 Svelte
@@ -63,5 +67,6 @@ This project is open-source and available under the MIT License
 
 This project is open-source and available under the MIT License
 .
+
 
 
