@@ -76,7 +76,7 @@
 			title: "Dynamic Routes",
 			description: "Explore Studio Ghibli films with dynamic routing",
 			icon: "🎮",
-			href: "/tutorials/ghibli",
+			href: "/ghibli",
 			color: "from-red-500 to-orange-500"
 		}
 
