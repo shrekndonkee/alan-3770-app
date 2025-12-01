@@ -17,7 +17,7 @@
         {#each films as film}
             <div class="m-3">
                 <a 
-                    href={`/tutorials/ghibli/${film.id}`} 
+                    href={`/ghibli/${film.id}`} 
                     class="border p-2 rounded-lg bg-primary-50-950 hover:underline"
                 >
                     {film.title}
