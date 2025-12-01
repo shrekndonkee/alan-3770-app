@@ -11,11 +11,10 @@
         <img
             src={film.image}
             alt={film.title}
-            class="mb-6 mx-auto rounded-lg shadow-lg max-w-full h-auto"
+            class="mb-6 mx-auto rounded-lg shadow-lg w-full max-w-xs h-auto"
         />
 
         <div class="space-y-2 mb-6 text-left">
-            <p class="text-lg"><strong>{film.title}</strong></p>
             <p class="text-lg"><strong>Director:</strong> {film.director}</p>
             <p class="text-lg"><strong>Producer:</strong> {film.producer}</p>
             <p class="text-lg"><strong>Release Year:</strong> {film.release_date}</p>
