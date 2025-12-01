@@ -69,7 +69,16 @@
 	icon: "🎞️",
 	href: "/tutorials/motion",
 	color: "from-blue-600 to-indigo-600"
-}
+},
+
+
+{
+			title: "Dynamic Routes",
+			description: "Explore Studio Ghibli films with dynamic routing",
+			icon: "🎮",
+			href: "/tutorials/ghibli",
+			color: "from-red-500 to-orange-500"
+		}
 
 	];
 </script>
