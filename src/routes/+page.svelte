@@ -84,7 +84,7 @@
 		{
 			title: 'Motion',
 			description: 'Animate elements with Svelte transitions & motion.',
-			href: '/tutorials/motions',
+			href: '/tutorials/motion',
 			icon: '🎞️',
 			glow: 'from-cyan-500 via-cyan-400 to-cyan-300',
 			border: 'border-cyan-600/40 hover:border-cyan-400',
@@ -94,7 +94,7 @@
 		{
 			title: 'Dynamic Routes: Studio Ghibli',
 			description: 'Browse Studio Ghibli movies using Svelte dynamic routes.',
-			href: '/routes/ghibli',
+			href: '/ghibli',
 			icon: '🖼️',
 			glow: 'from-indigo-500 via-indigo-400 to-indigo-300',
 			border: 'border-indigo-600/40 hover:border-indigo-400',
