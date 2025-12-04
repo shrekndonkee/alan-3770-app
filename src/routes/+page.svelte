@@ -78,6 +78,28 @@
 			border: 'border-rose-600/40 hover:border-rose-400',
 			bg: 'bg-rose-950/60',
 			bar: 'from-rose-500 via-rose-400 to-rose-300'
+		},
+
+
+		{
+			title: 'Motion',
+			description: 'Animate elements with Svelte transitions & motion.',
+			href: '/tutorials/motions',
+			icon: '🎞️',
+			glow: 'from-cyan-500 via-cyan-400 to-cyan-300',
+			border: 'border-cyan-600/40 hover:border-cyan-400',
+			bg: 'bg-cyan-950/60',
+			bar: 'from-cyan-500 via-cyan-400 to-cyan-300'
+		},
+		{
+			title: 'Dynamic Routes: Studio Ghibli',
+			description: 'Browse Studio Ghibli movies using Svelte dynamic routes.',
+			href: '/routes/ghibli',
+			icon: '🖼️',
+			glow: 'from-indigo-500 via-indigo-400 to-indigo-300',
+			border: 'border-indigo-600/40 hover:border-indigo-400',
+			bg: 'bg-indigo-950/60',
+			bar: 'from-indigo-500 via-indigo-400 to-indigo-300'
 		}
 
 	];
@@ -116,61 +138,74 @@
 		<div class="relative z-20 max-w-7xl mx-auto px-6 py-20">
 			
 			<!-- Main Header -->
-			<div class="text-center mb-16">
-				<div class="inline-block p-4 border border-green-600/50 rounded-lg mb-8 bg-black/50 backdrop-blur-sm">
-					<div class="flex items-center justify-center space-x-2 text-green-400 text-sm font-mono mb-2">
-						<span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-						<span>SYSTEM ONLINE</span>
-						<span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-					</div>
-					
-					<h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-gray-400 to-green-600 mb-4">
-						Alan Dev
-					</h1>
-					
-					<div class="text-2xl md:text-3xl text-gray-300 font-mono">
-						<span class="text-green-400">&gt;</span> 
-						Advanced Svelte Training Protocol
-						<span class="animate-pulse text-green-400">_</span>
-					</div>
-				</div>
+		<div class="mb-16 text-center">
+	<div class="relative inline-block rounded-2xl border border-emerald-500/50 bg-gradient-to-br from-emerald-900/70 via-slate-950 to-black/80 px-10 py-8 shadow-[0_20px_60px_rgba(0,0,0,0.85)] backdrop-blur-sm">
 
-				<p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-					Access comprehensive Svelte development training modules. 
-					Enhance your skills through interactive tutorials and hands-on coding experiences.
-				</p>
-			</div>
+		<!-- soft outer glow -->
+		<div
+			class="pointer-events-none absolute -inset-2 -z-10 rounded-3xl bg-emerald-500/30 blur-2xl opacity-60">
+		</div>
+
+		<!-- top bar, replaces "SYSTEM ONLINE" -->
+		<div class="mb-6 flex items-center justify-between text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-300/80">
+			<span>ALAN DEV // TRAINING CONSOLE</span>
+			<span>v1.0.0</span>
+		</div>
+
+		<h1
+			class="mb-4 bg-gradient-to-r from-emerald-400 via-slate-200 to-emerald-500 bg-clip-text text-5xl md:text-7xl font-black text-transparent">
+			Alan Dev
+		</h1>
+
+		<div class="text-xl md:text-2xl font-mono text-slate-200">
+			<span class="text-emerald-400">&gt;</span>
+			<span class="mx-2">Advanced Svelte Training Protocol</span>
+			<span class="animate-pulse text-emerald-400">_</span>
+		</div>
+	</div>
+
+	<p class="mt-8 mx-auto max-w-3xl text-xl leading-relaxed text-slate-400">
+		Access comprehensive Svelte development training modules. Enhance your skills through
+		interactive tutorials and hands-on coding experiences.
+	</p>
+</div>
+
 
 
 {#if authState.isAuthenticated}
 <div class="mb-16 text-center">
 	<a href="/tutorials" class="group relative inline-block">
 
-		<!-- Green glow background -->
+		<!-- Glow background with pulse on hover -->
 		<div
-			class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-green-500 via-green-400 to-green-300 opacity-60 blur-lg transition-opacity duration-500 group-hover:opacity-100">
+			class="absolute -inset-2 rounded-2xl bg-gradient-to-r from-green-500 via-green-400 to-green-300 opacity-60 blur-lg transition duration-500 group-hover:opacity-100 group-hover:animate-pulse">
 		</div>
 
 		<!-- Main container -->
 		<div
-			class="relative rounded-2xl border-2 border-green-600/50 bg-black/50 p-8 backdrop-blur-sm transition-all duration-300 hover:border-green-400">
+			class="relative overflow-hidden rounded-2xl border-2 border-green-600/50 bg-black/60 px-10 py-8 backdrop-blur-sm transition-all duration-300 group-hover:-translate-y-1 group-hover:border-green-400">
 
-			<!-- Icon -->
-			<div class="mb-4 text-6xl">🚀</div>
+			<!-- Icon with hover float/tilt -->
+			<div class="mb-4 flex justify-center">
+				<div class="relative">
+					<span
+						class="absolute inset-0 -z-10 h-12 w-12 rounded-full bg-green-500/30 blur-md opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+					</span>
+					<span
+						class="text-6xl transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3">
+						📚
+					</span>
+				</div>
+			</div>
 
-			<!-- Title -->
-			<div class="mb-2 text-3xl font-bold text-white">ACCESS TUTORIALS</div>
-
-			<!-- Subtitle in green -->
-			<div class="font-mono text-green-400">ENTER TRAINING PROTOCOL</div>
-
-			<!-- Scanning line effect (green version) -->
-			<div
-				class="absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-green-400/20 to-transparent transition-transform duration-1000 ease-in-out group-hover:translate-x-[100%]">
+			<!-- Title only -->
+			<div class="text-3xl font-bold tracking-wide text-white">
+				ACCESS TUTORIALS
 			</div>
 		</div>
 	</a>
 </div>
+
 
 
 <!-- Tutorial Module Preview Cards - Authenticated Users Only -->
@@ -287,25 +322,7 @@
 			
 			
 
-			<!-- Stats -->
-			<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
-				<div class="text-center p-4 border border-gray-700 rounded-lg bg-black/50 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-green-400">03</div>
-					<div class="text-sm text-gray-400 font-mono">MODULES</div>
-				</div>
-				<div class="text-center p-4 border border-gray-700 rounded-lg bg-black/50 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-gray-400">∞</div>
-					<div class="text-sm text-gray-400 font-mono">POSSIBILITIES</div>
-				</div>
-				<div class="text-center p-4 border border-gray-700 rounded-lg bg-black/50 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-green-400">100%</div>
-					<div class="text-sm text-gray-400 font-mono">REACTIVE</div>
-				</div>
-				<div class="text-center p-4 border border-gray-700 rounded-lg bg-black/50 backdrop-blur-sm">
-					<div class="text-2xl font-bold text-gray-300">⚡</div>
-					<div class="text-sm text-gray-400 font-mono">FAST</div>
-				</div>
-			</div>
+		
 		</div>
 	</section>
 </div>
