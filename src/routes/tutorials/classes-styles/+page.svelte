@@ -91,7 +91,7 @@
 					class:shadow-[0_0_40px_rgba(250,204,21,0.4)]={highlighted}
 				>
 					{#if highlighted}
-						<span class="text-yellow-300">✨ Highlighted!</span>
+						<span class="text-black">✨ Highlighted!</span>
 					{:else}
 						<span class="text-slate-200">Click me to highlight</span>
 					{/if}
@@ -213,7 +213,7 @@
 				<div class="mt-2 text-xs text-rose-300/90 md:mt-0">
 					<span class="text-rose-400">&gt;</span> Next module:
 					<a
-						href="/tutorials/motions"
+						href="/tutorials/motion"
 						class="ml-1 underline decoration-rose-400/60 underline-offset-4 hover:decoration-rose-300"
 					>
 						Motion & animation

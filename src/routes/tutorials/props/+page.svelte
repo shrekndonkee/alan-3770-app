@@ -4,6 +4,13 @@
     import CodeBlock from '$lib/components/CodeBlock/CodeBlock.svelte';
     let name = 'Svelte';
 
+
+
+
+
+  // slider-controlled length value for the "Reactivity + Props" block
+  let nameLength = $state(name.length);
+
     const exampleHtml = `<${'script'} lang='ts'>
   let { name = 'Alan' } = $props()
 </${'script'}>
@@ -90,30 +97,31 @@
       </div>
 
       <!-- Example Block #3: Derived Prop Example -->
-      <div class="rounded-2xl border border-sky-600/30 bg-black/70 p-5 shadow-[0_14px_40px_rgba(0,0,0,0.75)]">
-        <header class="mb-4">
-          <h2 class="text-lg font-semibold text-sky-100">Reactivity + Props</h2>
-          <p class="mt-1 text-xs text-slate-300">
-            Props can reflect reactive state in the parent. When the value changes, the child updates automatically.
-          </p>
-        </header>
+<div class="rounded-2xl border border-sky-600/30 bg-black/70 p-5 shadow-[0_14px_40px_rgba(0,0,0,0.75)]">
+  <header class="mb-4">
+    <h2 class="text-lg font-semibold text-sky-100">Reactivity + Props</h2>
+    <p class="mt-1 text-xs text-slate-300">
+      Props can reflect reactive state in the parent. When the value changes, the child updates automatically.
+    </p>
+  </header>
 
-        <input
-          type="range"
-          min="1"
-          max="10"
-          bind:value={name.length}
-          class="w-full accent-sky-400"
-        />
+  <input
+    type="range"
+    min="1"
+    max="10"
+    step="1"
+    bind:value={nameLength}
+    class="w-full accent-sky-400"
+  />
 
-        <p class="text-sky-200 font-mono text-sm mt-2">
-          name length: {name.length}
-        </p>
+  <p class="text-sky-200 font-mono text-sm mt-2">
+    name length: {nameLength}
+  </p>
 
-        <div class="mt-4 rounded-lg border border-sky-700/40 bg-sky-900/20 p-3">
-          <Child name={`Name length is ${name.length}`} />
-        </div>
-      </div>
+  <div class="mt-4 rounded-lg border border-sky-700/40 bg-sky-900/20 p-3">
+    <Child name={`Name length is ${nameLength}`} />
+  </div>
+</div>
 
       <!-- Example Block #4: NEW PROPS EXAMPLE -->
       <div class="rounded-2xl border border-sky-600/30 bg-black/70 p-5 shadow-[0_14px_40px_rgba(0,0,0,0.75)]">
