@@ -19,65 +19,65 @@
 
 	const tutorialSections = [
 		{
-			title: "Reactivity",
+			title: 'Reactivity',
 			description: "Master Svelte's reactive magic",
-			icon: "⚡",
-			href: "/tutorials/reactivity",
-			color: "from-green-700 to-green-500"
+			href: '/tutorials/reactivity',
+			icon: '⚡',
+			glow: 'from-emerald-500 via-emerald-400 to-emerald-300',
+			border: 'border-emerald-600/40 hover:border-emerald-400',
+			bg: 'bg-emerald-950/60',
+			bar: 'from-emerald-500 via-emerald-400 to-emerald-300'
 		},
 		{
-			title: "Props",
-			description: "Component communication patterns",
-			icon: "🔗",
-			href: "/tutorials/props", 
-			color: "from-gray-600 to-green-700"
+			title: 'Props',
+			description: 'Component communication patterns',
+			href: '/tutorials/props',
+			icon: '🧩', // different from Bindings
+			glow: 'from-sky-500 via-sky-400 to-sky-300',
+			border: 'border-sky-600/40 hover:border-sky-400',
+			bg: 'bg-sky-950/60',
+			bar: 'from-sky-500 via-sky-400 to-sky-300'
 		},
 		{
-			title: "Logic",
-			description: "Conditional rendering & loops",
-			icon: "🧠",
-			href: "/tutorials/logic",
-			color: "from-green-600 to-emerald-600"
-		},
-
-		{
-			title: "Events",
-			description: "Components send and respond to actions",
-			icon: "🔔",
-			href: "/tutorials/events",
-			color: "from-green-600 to-emerald-600"
-		},
-
-		{
-			title: "Bindings",
-			description: "Connect values between your code",
-			icon: "🔗",
-			href: "/tutorials/bindings",
-			color: "from-green-600 to-emerald-600"
-		},
-
-		{
-			title: "Classes & Styles",
-			description: "Change an element’s appearance by binding CSS classes or inline styles to reactive state variables.",
-			icon: "🎨",
-			href: "/tutorials/classes-styles",
-			color: "from-green-600 to-emerald-600"
+			title: 'Logic',
+			description: 'Conditional rendering & loops',
+			href: '/tutorials/logic',
+			icon: '🧠',
+			glow: 'from-lime-500 via-lime-400 to-lime-300',
+			border: 'border-lime-600/40 hover:border-lime-400',
+			bg: 'bg-lime-950/60',
+			bar: 'from-lime-500 via-lime-400 to-lime-300'
 		},
 		{
-	title: "Motion",
-	description: "Animate elements using transitions, springs, and tweened stores to bring your UI to life.",
-	icon: "🎞️",
-	href: "/tutorials/motion",
-	color: "from-blue-600 to-indigo-600"
-},
-
-
-{
-			title: "Dynamic Routes",
-			description: "Explore Studio Ghibli films with dynamic routing",
-			icon: "🖼️",
-			href: "/ghibli",
-			color: "from-red-500 to-orange-500"
+			title: 'Events',
+			description: 'Components send and respond to actions',
+			href: '/tutorials/events',
+			icon: '🔔',
+			glow: 'from-amber-500 via-amber-400 to-amber-300',
+			border: 'border-amber-600/40 hover:border-amber-400',
+			bg: 'bg-amber-950/60',
+			bar: 'from-amber-500 via-amber-400 to-amber-300'
+		},
+		{
+			title: 'Bindings',
+			description: 'Connect values between your code',
+			href: '/tutorials/bindings',
+			icon: '🔗',
+			glow: 'from-fuchsia-500 via-fuchsia-400 to-fuchsia-300',
+			border: 'border-fuchsia-600/40 hover:border-fuchsia-400',
+			bg: 'bg-fuchsia-950/60',
+			bar: 'from-fuchsia-500 via-fuchsia-400 to-fuchsia-300'
+		},
+		{
+			title: 'Classes & Styles',
+			description:
+				"Change an element’s appearance by binding CSS classes or inline styles to reactive state.",
+			href: '/tutorials/classes-styles',
+			icon: '🎨',
+			glow: 'from-rose-500 via-rose-400 to-rose-300',
+			border: 'border-rose-600/40 hover:border-rose-400',
+			bg: 'bg-rose-950/60',
+			bar: 'from-rose-500 via-rose-400 to-rose-300'
 		}
 
 	];
@@ -178,36 +178,32 @@
 	{#each tutorialSections as section}
 		<a href={section.href} class="group relative block">
 
-			<!-- Green Glow -->
+			<!-- Colored Glow -->
 			<div
-				class="absolute -inset-1 rounded-xl bg-gradient-to-r from-green-500 via-green-400 to-green-300 opacity-25 blur transition duration-500 group-hover:opacity-75">
+				class={`absolute -inset-1 rounded-xl bg-gradient-to-r opacity-25 blur transition duration-500 group-hover:opacity-75 ${section.glow}`}>
 			</div>
 
 			<!-- Main Card -->
 			<div
-				class="relative rounded-xl border border-green-600/40 bg-black/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-green-400">
+				class={`relative rounded-xl border ${section.border} ${section.bg} p-6 backdrop-blur-sm transition-all duration-300`}>
 
-				<!-- Module Status -->
+				<!-- Icon row (badge removed) -->
 				<div class="mb-4 flex items-center justify-between">
 					<div class="text-3xl">{section.icon}</div>
-					<div class="rounded bg-green-400/10 px-2 py-1 font-mono text-xs text-green-400">
-						AVAILABLE
-					</div>
 				</div>
 
 				<!-- Module Info -->
 				<h3 class="mb-2 text-xl font-bold text-white">{section.title}</h3>
-				<p class="mb-4 text-sm text-green-200/70">{section.description}</p>
+				<p class="mb-4 text-sm text-green-100/80">{section.description}</p>
 
-				<!-- Progress Bar -->
-				<div class="mb-3 h-2 w-full rounded-full bg-green-950/40">
+				<!-- Progress Bar (per-card color, animates on hover) -->
+				<div class="mt-2 h-2 w-full rounded-full bg-black/40">
 					<div
-						class="h-2 w-0 rounded-full bg-gradient-to-r from-green-500 via-green-400 to-green-300 transition-all duration-1000 group-hover:w-full">
+						class={`h-2 w-0 rounded-full bg-gradient-to-r ${section.bar} transition-all duration-700 group-hover:w-full`}>
 					</div>
 				</div>
 
-				<!-- Footer Label -->
-				<div class="font-mono text-sm text-green-400">&gt; INITIALIZE MODULE_</div>
+				<!-- Footer label removed -->
 			</div>
 		</a>
 	{/each}
