@@ -108,7 +108,6 @@
     }
 
     let theme = themeFor(film.title);
-    
 </script>
 
 <main class="min-h-screen bg-gradient-to-b from-black via-slate-950 to-black text-slate-50">
@@ -124,19 +123,20 @@
             <div class="grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.4fr)] md:items-center">
                 <!-- Poster -->
                 <div class="flex flex-col items-center gap-4">
+                    <!-- TITLE: solid white, bold -->
                     <h1
-                        class={`text-center text-2xl font-black tracking-tight md:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-50 ${theme.titleAccent}`}
+                        class="text-center text-2xl font-black tracking-tight text-white md:text-3xl"
                     >
                         {film.title}
                     </h1>
 
                     <div
-                        class="overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/80 shadow-[0_18px_50px_rgba(0,0,0,0.85)] max-w-xs w-full"
+                        class="rounded-2xl border border-slate-700/70 bg-slate-900/80 shadow-[0_18px_50px_rgba(0,0,0,0.85)] max-w-sm w-full"
                     >
                         <img
                             src={film.image}
                             alt={film.title}
-                            class="h-64 w-full object-cover md:h-72"
+                            class="w-full h-auto max-h-[420px] object-contain"
                         />
                     </div>
                 </div>
